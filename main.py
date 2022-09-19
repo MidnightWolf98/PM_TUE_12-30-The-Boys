@@ -33,3 +33,32 @@ def address():
         address()
 
 address()
+
+#Scene 3
+print("Some time after the detective leaves your apartment, you suddenly begin to hear loud sirens going past your building.")
+print("You reach for the tv remote and turn your television on.")
+print("You witness live action of a man called the Boomerang, who has broken into a bank.")
+print("He has captured hostages!!!")
+print("Your assistance is needed regarding defeating the Boomerang.")
+print("What will you do?")
+
+print("1: You bolt out of your apartment and head towards the Central bank")
+print("2: You turn of the TV and ignore the lives of the innocent civilians.")
+
+def bank():
+    try:
+        choice = int(input("Please choose option 1 or 2:"))
+        if choice == 1:
+            print("You have chosen the heroic path and are on your way of saving lives!")
+        elif choice == 2:
+            print("You hav chosen to ignore the situation! Innocents have died because of your consequences!!!")
+            os._exit(1)
+        else:
+            print("Please input integers (1 or 2) only! Please try again!")
+            bank()
+    except:
+        print("Please input integers (1 or 2) only! Please try again!")
+        bank()
+
+
+bank()
