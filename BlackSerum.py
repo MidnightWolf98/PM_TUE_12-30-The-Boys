@@ -1,4 +1,5 @@
 #!/bin/python3
+import random
 
 # SCENE 2
 print("One Year Later")  # Prints the statement
@@ -103,4 +104,42 @@ def crime_choice():  # Defines the crime_choice function
 
 crime_choice()  # Calls the crime_choice function
 
-# Scene 4
+#SCENE 4
+print("You get in your car and put your home address into the gps") #Prints the statement
+print("You finally reach the destination after half an hours of driving") #Prints the statement
+print("Suddenly your old friend Lenny knocks on your door") #Prints the statement
+print("After conversing with Lenny you find out someone has kidnapped his family so you get in the van with him") #Prints the statement
+print("You reach the building where Lenny's family is being held") #Prints the statement
+print("Its time for you to use your powers once again") #Prints the statement
+
+print("The miniboss 'Mike Tyson's' health is 20, how do you choose to attack it?") #Prints the statement
+print("1 - Try to run past [No Damage]") #Prints the statement
+print("2 - Super Kick [Random Damage]") #Prints the statement
+print("3 - Hyper Punch [Two Shot]") #Prints the statement
+
+def attack_choice(): #Defines the attack_choice function
+    try: #Trys to run the code below
+        miniboss_health = 20 #Defines miniboss_health as 20
+        attack_input = int(input("What attack will you use: ")) #Allows user to input an integer
+        while miniboss_health > 0: #While vault_health is more than 0, run the code below
+            random_damage = random.randint(1, miniboss_health) #Defines random_damage as a random integer between 1 and the miniboss_health
+            if attack_input == 1: #If input is 1, run the code below
+                print("You have done 0 damage to Mike Tyson") #Prints the statement
+            elif attack_input == 2: #If input is 2, run the code below
+                print("You have done", random_damage, "damage to Mike Tyson") #Prints the statement and random_damage
+                miniboss_health = (miniboss_health - random_damage) #Redefines miniboss_health as random_damage subtracting from miniboss_health
+                print("Mike Tyson's health is", miniboss_health) #Prints the statement and vault_health
+            elif attack_input == 3: #If input is 3, run the code below
+                print("One more shot to take down Mike Tyson") #Prints the statement
+                miniboss_health = 0 #Redefines miniboss_health as 0
+            else: #Runs the code below if the input is not 1, 2 or 3
+                print("Try Again") #Prints the statement
+                attack_choice() #Runs the attack_choice function
+            attack_input = int(input("What attack will you use: ")) #Allows user to input an integer
+            if miniboss_health <= 0: #If miniboss_health is less than or equal to 0, it runs the code below
+                print("You defeat Mike Tyson and carry on") #Prints the statement
+    except: #Runs the code below to avoid error in case of wrong input
+        print("Please enter 1, 2 or 3 only") #Prints the statement
+        attack_choice() #Runs the attack_choice function
+
+attack_choice() #Calls the attack_choice function
