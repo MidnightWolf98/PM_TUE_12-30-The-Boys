@@ -121,14 +121,14 @@ def attack_choice(): #Defines the attack_choice function
     try: #Trys to run the code below
         miniboss_health = 20 #Defines miniboss_health as 20
         attack_input = int(input("What attack will you use: ")) #Allows user to input an integer
-        while miniboss_health > 0: #While vault_health is more than 0, run the code below
+        while miniboss_health > 0: #While miniboss_health is more than 0, run the code below
             random_damage = random.randint(1, miniboss_health) #Defines random_damage as a random integer between 1 and the miniboss_health
             if attack_input == 1: #If input is 1, run the code below
                 print("You have done 0 damage to Mike Tyson") #Prints the statement
             elif attack_input == 2: #If input is 2, run the code below
                 print("You have done", random_damage, "damage to Mike Tyson") #Prints the statement and random_damage
                 miniboss_health = (miniboss_health - random_damage) #Redefines miniboss_health as random_damage subtracting from miniboss_health
-                print("Mike Tyson's health is", miniboss_health) #Prints the statement and vault_health
+                print("Mike Tyson's health is", miniboss_health) #Prints the statement and miniboss_health
             elif attack_input == 3: #If input is 3, run the code below
                 print("One more shot to take down Mike Tyson") #Prints the statement
                 miniboss_health = 0 #Redefines miniboss_health as 0
