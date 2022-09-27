@@ -62,3 +62,136 @@ def bank():
 
 
 bank()
+
+#Scene 3
+import time
+
+answer_A = ["A", "a"]
+answer_B = ["B", "b"]
+answer_C = ["C", "c"]
+yes = ["Y", "y", "yes"]
+no = ["N", "n", "no"]
+
+tranquilizer_gun = 0
+purple_potion = 0
+
+required = ("\nUse only A, B, or C\n")
+
+def mystery():
+    print("Great job!!! You have defeated A-Train, however he makes a run for it")
+    print("You chase after him!!! He leads you to a dark alley and disappears.")
+    print("All of a sudden you hear a massive growl!!!")
+    print("Oh no it's Gorilla Grodd, an intelligent telepathic gorilla who has terrorised the city for some time")
+    print("He charges at you. What will you do:")
+    time.sleep(1)
+    print("""  A. Throw a lightning bolt at him
+      B. Stay still
+      C. Run away""")
+    choice = input(">>> ")
+    if choice in answer_A:
+        lightning_bolt()
+    elif choice in answer_B:
+        print("\nWelp, that was quick.")
+        print("You have died")
+    elif choice in answer_C:
+        run()
+    else:
+        print(required)
+        mystery()
+def lightning_bolt():
+    print("The lightning bolt has stunned him, but it wasn't enough as he regains control")
+    print("The gorilla charges at you again. What will you do?")
+    time.sleep(1)
+    print( "A. Run")
+    print("B. Throw another lightning strike")
+    print("C. Run towards a nearby tunnel underground")
+    choice = input(">>> ")
+    if choice in answer_A:
+        run()
+    elif choice in answer_B:
+        print("\nYou decided to throw another lighting bolt, but the gorilla dodges it. You have died!! ")
+
+    elif choice in answer_C:
+        tunnel()
+    else:
+        print(required)
+        lightning_bolt()
+
+def tunnel():
+    print("While your running from the gorilla, you notice a tranquilizer gun")
+    print("Do you pick it up. Y/N?")
+    choice = input(">>> ")
+    if choice in yes:
+        tranquilizer_gun = 1
+    else:
+        tranquilizer_gun = 0
+    print("\nWhat do you do next?")
+    time.sleep(1)
+    print("A. Hide behind a wall")
+    print("B. Fight the gorilla")
+    print("C. Run")
+    choice = input(">>> ")
+    if choice in answer_A:
+        print("\nHiding wasn't a smart option. He found you!!!, You have died!!")
+    elif choice in answer_B:
+        if tranquilizer_gun > 0:
+            print("\nYou wait for him in the darkness. Aiming down the gun, waiting to get a clear shot.")
+            print("You spot him, and shoot him right in chest 3 times. Congrats you have survived!!!")
+        else:
+            print("\nYou should have picked up that gun.")
+            print("You have died!!!")
+
+    elif choice in answer_C:
+        print("As the gorilla enters the tunnel")
+        print(" You silently sneak out and continue running.")
+        print("However, he spots you")
+        run()
+    else:
+        print(required)
+        tunnel()
+def run():
+    print("You run as quickly as possible, but the gorilla also has super speed, he's catching up!!!")
+    print("What will you do?")
+    time.sleep(1)
+    print(" A. Hide behind a pillar")
+    print("B. Enough running, it's time to fight")
+    print("C. Continue running")
+    choice = input(">>> ")
+    if choice in answer_A:
+        print("You're easily spotted. The gorilla outsmarted you.")
+        print("You have died!!!")
+    elif choice in answer_B:
+        print("\nYou try your hardest, but he's too strong.")
+        print("You have died!!!")
+
+    elif choice in answer_C:
+        continue_running()
+    else:
+        print(required)
+        run()
+def continue_running():
+    print("While your running down the street")
+    print("You notice a purple potion, just sitting there in the middle of the street")
+    print("Do you pick it up?")
+    choice = input(">>> ")
+    if choice in yes:
+        purple_potion = 1
+    else:
+        purple_potion = 0
+    print("You hear its heavy footsteps and prepare yourself to fight the beast!!!")
+    time.sleep(1)
+    if purple_potion > 0:
+        print("\nYou quickly drink the potion. It gave you super strength!!!")
+        print("You defeated Gorilla Grodd with the help of the potion")
+        print("Congratulations, you have survived!!!")
+    else:
+        print("\nMaybe you should have picked up the potion!!!")
+        print("You have died")
+
+mystery()
+
+
+
+
+
+
