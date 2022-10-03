@@ -1,5 +1,6 @@
 #!/bin/python3
 import random
+import os
 
 # SCENE 2
 print("One Year Later")  # Prints the statement
@@ -303,3 +304,192 @@ door4_choice() #Callss the door4_choice function
 print("You have successfully unlocked all 4 doors") #Prints the statement
 print("After unlocking all the doors, you see that Maeve has escaped prison and is now holding your mother and father hostage")#Prints the statement
 print("You realise Lenny had led you on and betrayed you")#Prints the statement
+
+#SCENE 6
+print("Just as you are about to free your mother and father, Maeve drops from the roof in the last second and kicks you away") #Prints the statement
+print("It seems this whole thing was a trap to kill you but luckily you called 3 of your closest military friends to help") #Prints the statement
+print("She takes a newly made serum and it seems it multiplies her powers by 10")
+print("This fight is unwinnable but she has your parents")
+print("FINAL BOSS FIGHT: Maeve")
+def rating_choice(): #Defines the rating_choice function
+    try: #Trys to run the code below
+        rating = float(input("Please rate the game on a scale from 0.0 to 1.0, 0.0 - 0.1 being bad and 0.9 - 1.0 being good: ")) #Allows user to input a float
+        while rating == "": #While input is empty, run the code below
+            rating = float(input("Please rate the game on a scale from 0.0 to 1.0, 0.0 - 0.1 being bad and 0.9 - 1.0 being good: ")) #Allows user to input a float
+        while rating > 1.0: #While input is more then 1.0, run the code below
+            print("Choose between 0.0 - 1.0 only") #Prints the statement
+            rating = float(input("Please rate the game on a scale from 0.0 to 1.0, 0.0 - 0.1 being bad and 0.9 - 1.0 being good: ")) #Allows user to input a float
+        print("Thank you for rating the game a", rating, "out of 1.0") #Prints the statement and rating
+    except: #Runs the code below to avoid error in case of wrong input
+        print("Enter in a float only") #Prints the statement
+        rating_choice() #Runs the rating_choice function
+
+def escape3_choice(): #Defines the escape3_choice function
+    try: #Trys to run the code below
+        print("What would you like to do?")  # Prints the statement
+        print("1 - Leave your parents and run like a coward")  # Prints the statement
+        print("2 - Alert your team to fall back from the trap to get her by herself")  # Prints the statement
+        print("3 - Try and fight a suped up Maeve")  # Prints the statement
+        escape_input = int(input("What will you do: ")) #Allows user to input an integer
+        if escape_input == 1: #If the input is 1, run the code below
+            print("You quickly get outside but Maeve is right behind you") #Prints the statement
+            print("While you may have your superpowers, you know if she even hits you, you will explode into a million pieces") #Prints the statement
+            print("You keep running but unfortunately she catches up to you") #Prints the statement
+            print("You beg for your life but before you can say a word she kills you so quick you didnt realise you died until 2 seconds later") #Prints the statement
+            print("You were an honorary team member at EB-Hi-Fi") #Prints the statement
+            print("You were a honest person but unfortunately got caught up in a world where you didnt belong") #Prints the statement
+            print("Thank you for playing The Boys: Text-Based Game!") #Prints the statement
+            rating_choice() #Runs the rating_choice function
+            os._exit(1) #Uses the os module to exit the code
+        elif escape_input == 2: #If the input is 2, run the code below
+            print("The last team member makes it back but Maeve runs after you and your team") #Prints the statement
+            print("Luckily your team called for backup") #Prints the statement
+            print("The newly appointed joint super task force arrives just in time")  # Prints the statement
+            print("Both the Avengers and the Justice League have come to your aid")  # Prints the statement
+            print("Maeve isnt scared and try's to outflank them but theres too many of them")  # Prints the statement
+            print("She gets pummeled so hard by everybody and is eventually captured to be held in the new supermax cell designed just for her")  # Prints the statement
+            print("You thank the task force and save your parents")  # Prints the statement
+            print("You were an honorary team member at EB-Hi-Fi")  # Prints the statement
+            print("You were a honest person but unfortunately got caught up in a world where you didnt belong")  # Prints the statement
+            print("You win the game, CONGRATULATIONS!!!")  # Prints the statement
+            print("Thank you for playing The Boys: Text-Based Game!")  # Prints the statement
+            rating_choice() #Runs the rating_choice function
+            os._exit(1) #Uses the os module to exit the code
+        elif escape_input == 3: #If the input is 3, run the code below
+            print("You attempt to save your parents")  # Prints the statement
+            print("Its you, your team and Maeve ")  # Prints the statement
+            print("he first team member attempts to attack her thinking she will be weak")  # Prints the statement
+            print("Before he has a chance to even touch her, he gets hit so hard, his body is flung to the other side of the warehouse")  # Prints the statement
+            print("The second team member attempts to gun her down with an AK-47")  # Prints the statement
+            print("Unfortunately he doesnt know that shes bullet proof")  # Prints the statement
+            print("Maeve quickly jumps in the air and fly kicks him out of existence")  # Prints the statement
+            print("The last team member, after seeing his other two team members die in front of his eyes, decides to run but Maeve throws a rock from the ground to his head")  # Prints the statement
+            print("In doing so, his head explodes and in turn you are the last one left")  # Prints the statement
+            print("Its you and Maeve in the ring")  # Prints the statement
+            print("You ask her why she is going to such lengths to hurt you")  # Prints the statement
+            print("She says you decided to get rid of what made her special so she is trying to get rid of you")  # Prints the statement
+            print("You try and talk her down but she see what you are trying to do and runs towards you")  # Prints the statement
+            print("You two engage in a battle each blocking each others hits")  # Prints the statement
+            print("You start to get tired and it feels like you are losing your powers as each hit does more and more damage")  # Prints the statement
+            print("You cant go anymore and Maeve gets in one last hit")  # Prints the statement
+            print("Unfortunately she kills you so quick you didnt realise you died until 2 seconds later")
+            print("You were an honorary team member at EB-Hi-Fi")  # Prints the statement
+            print("You were a honest person but unfortunately got caught up in a world where you didnt belong")  # Prints the statement
+            print("Thank you for playing The Boys: Text-Based Game!")  # Prints the statement
+            rating_choice() #Runs the rating_choice function
+            os._exit(1) #Uses the os module to exit the code
+        else: #Runs the code below if the input is not 1, 2 or 3
+            print("Try Again!") #Prints the statement
+            escape3_choice() #Runs the escape3_choice function
+        escape_input = int(input("What will you do: ")) #Allows user to input an integer
+    except: #Runs the code below to avoid error in case of wrong input
+        print("Please choose 1, 2 or 3") #Prints the statement
+        escape3_choice() #Runs the escape3_choice function
+
+def escape2_choice(): #Defines the escape2_choice function
+    try: #Trys to run the code below
+        print("What would you like to do?")  # Prints the statement
+        print("1 - Leave your parents and run like a coward")  # Prints the statement
+        print("2 - Alert your team to fall back from the trap to get her by herself")  # Prints the statement
+        print("3 - Try and fight a suped up Maeve")  # Prints the statement
+        escape_input = int(input("What will you do: ")) #Allows user to input an integer
+        if escape_input == 1: #If the input is 1, run the code below
+            print("You quickly get outside but Maeve is right behind you") #Prints the statement
+            print("While you may have your superpowers, you know if she even hits you, you will explode into a million pieces") #Prints the statement
+            print("You keep running but unfortunately she catches up to you") #Prints the statement
+            print("You beg for your life but before you can say a word she kills you so quick you didnt realise you died until 2 seconds later") #Prints the statement
+            print("You were an honorary team member at EB-Hi-Fi") #Prints the statement
+            print("You were a honest person but unfortunately got caught up in a world where you didnt belong") #Prints the statement
+            print("Thank you for playing The Boys: Text-Based Game!") #Prints the statement
+            rating_choice() #Runs the rating_choice function
+            os._exit(1) #Uses the os module to exit the code
+        elif escape_input == 2: #If the input is 2, run the code below
+            print("Another person makes it back, but the last team member is still in there") #Prints the statement
+            escape3_choice() #Runs the escape3_choice function
+        elif escape_input == 3: #If the input is 3, run the code below
+            print("You attempt to save your parents")  # Prints the statement
+            print("Its you, your team and Maeve ")  # Prints the statement
+            print("he first team member attempts to attack her thinking she will be weak")  # Prints the statement
+            print("Before he has a chance to even touch her, he gets hit so hard, his body is flung to the other side of the warehouse")  # Prints the statement
+            print("The second team member attempts to gun her down with an AK-47")  # Prints the statement
+            print("Unfortunately he doesnt know that shes bullet proof")  # Prints the statement
+            print("Maeve quickly jumps in the air and fly kicks him out of existence")  # Prints the statement
+            print("The last team member, after seeing his other two team members die in front of his eyes, decides to run but Maeve throws a rock from the ground to his head")  # Prints the statement
+            print("In doing so, his head explodes and in turn you are the last one left")  # Prints the statement
+            print("Its you and Maeve in the ring")  # Prints the statement
+            print("You ask her why she is going to such lengths to hurt you")  # Prints the statement
+            print("She says you decided to get rid of what made her special so she is trying to get rid of you")  # Prints the statement
+            print("You try and talk her down but she see what you are trying to do and runs towards you")  # Prints the statement
+            print("You two engage in a battle each blocking each others hits")  # Prints the statement
+            print("You start to get tired and it feels like you are losing your powers as each hit does more and more damage")  # Prints the statement
+            print("You cant go anymore and Maeve gets in one last hit")  # Prints the statement
+            print("Unfortunately she kills you so quick you didnt realise you died until 2 seconds later")
+            print("You were an honorary team member at EB-Hi-Fi")  # Prints the statement
+            print("You were a honest person but unfortunately got caught up in a world where you didnt belong")  # Prints the statement
+            print("Thank you for playing The Boys: Text-Based Game!")  # Prints the statement
+            rating_choice() #Runs the rating_choice function
+            os._exit(1) #Uses the os module to exit the code
+        else: #Runs the code below if the input is not 1, 2 or 3
+            print("Try Again!") #Prints the statement
+            escape2_choice() #Runs the escape2_choice function
+        escape_input = int(input("What will you do: ")) #Allows user to input an integer
+    except: #Runs the code below to avoid error in case of wrong input
+        print("Please choose 1, 2 or 3") #Prints the statement
+        escape2_choice() #Runs the escape2_choice function
+
+def escape1_choice(): #Defines the escape1_choice function
+    try: #Trys to run the code below
+        print("What would you like to do?") #Prints the statement
+        print("1 - Leave your parents and run like a coward") #Prints the statement
+        print("2 - Alert your team to fall back from the trap to get her by herself") #Prints the statement
+        print("3 - Try and fight a suped up Maeve") #Prints the statement
+        escape_input = int(input("What will you do: ")) #Allows user to input an integer
+        if escape_input == 1: #If the input is 1, run the code below
+            print("You quickly get outside but Maeve is right behind you") #Prints the statement
+            print("While you may have your superpowers, you know if she even hits you, you will explode into a million pieces") #Prints the statement
+            print("You keep running but unfortunately she catches up to you") #Prints the statement
+            print("You beg for your life but before you can say a word she kills you so quick you didnt realise you died until 2 seconds later") #Prints the statement
+            print("You were an honorary team member at EB-Hi-Fi") #Prints the statement
+            print("You were a honest person but unfortunately got caught up in a world where you didnt belong") #Prints the statement
+            print("Thank you for playing The Boys: Text-Based Game!") #Prints the statement
+            rating_choice() #Runs the rating_choice function
+            os._exit(1) #Uses the os module to exit the code
+        elif escape_input == 2: #If the input is 2, run the code below
+            print("While 1 person makes it back, the other 2 are still in there") #Prints the statement
+            escape2_choice() #Runs the escape2_choice function
+        elif escape_input == 3: #If the input is 3, run the code below
+            print("You attempt to save your parents") #Prints the statement
+            print("Its you, your team and Maeve ") #Prints the statement
+            print("he first team member attempts to attack her thinking she will be weak")  # Prints the statement
+            print("Before he has a chance to even touch her, he gets hit so hard, his body is flung to the other side of the warehouse")  # Prints the statement
+            print("The second team member attempts to gun her down with an AK-47")  # Prints the statement
+            print("Unfortunately he doesnt know that shes bullet proof")  # Prints the statement
+            print("Maeve quickly jumps in the air and fly kicks him out of existence")  # Prints the statement
+            print("The last team member, after seeing his other two team members die in front of his eyes, decides to run but Maeve throws a rock from the ground to his head")  # Prints the statement
+            print("In doing so, his head explodes and in turn you are the last one left")  # Prints the statement
+            print("Its you and Maeve in the ring")  # Prints the statement
+            print("You ask her why she is going to such lengths to hurt you")  # Prints the statement
+            print("She says you decided to get rid of what made her special so she is trying to get rid of you")  # Prints the statement
+            print("You try and talk her down but she see what you are trying to do and runs towards you")  # Prints the statement
+            print("You two engage in a battle each blocking each others hits")  # Prints the statement
+            print("You start to get tired and it feels like you are losing your powers as each hit does more and more damage")  # Prints the statement
+            print("You cant go anymore and Maeve gets in one last hit")  # Prints the statement
+            print("Unfortunately she kills you so quick you didnt realise you died until 2 seconds later")
+            print("You were an honorary team member at EB-Hi-Fi")  # Prints the statement
+            print("You were a honest person but unfortunately got caught up in a world where you didnt belong")  # Prints the statement
+            print("Thank you for playing The Boys: Text-Based Game!")  # Prints the statement
+            rating_choice() #Runs the rating_choice function
+            os._exit(1) #Uses the os module to exit the code
+        else: #Runs the code below if the input is not 1, 2 or 3
+            print("Try Again!") #Prints the statement
+            escape1_choice() #Runs the escape1_choice function
+        escape_input = int(input("What will you do: ")) #Allows user to input an integer
+    except: #Runs the code below to avoid error in case of wrong input
+        print("Please choose 1, 2 or 3") #Prints the statement
+        escape1_choice() #Runs the escape1_choice function
+
+escape1_choice() #Calls the escape1_choice function
+
+escape2_choice() #Calls the escape2_choice function
+
+escape3_choice() #Calls the escape3_choice function
