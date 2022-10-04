@@ -106,7 +106,7 @@ def phone_call_option(): #define phone_call_option function
     try:
         call = int(input('Enter 1 or 2: ')) #ask user to input an integer
         if call == 1: #call call_1 function if input is 1
-            print('You pick up the phone,')
+            print('You pick up the phone.')
             call_1()
         if call == 2: #run code below if input is not 1
             global call_time #get value of global variable  call_time
@@ -116,7 +116,7 @@ def phone_call_option(): #define phone_call_option function
                 if call_time == 2: #run code below if call_time equal to 2
                     call_3() #call function call_3
                     break #exit while loop
-        if call not in range(1,2): #run code below if input is not in range
+        if call not in range(1,3): #run code below if input is not in range
             print('Input invaild! Enter 1 or 2 only')
             phone_call_option()
     except: #recall function if input is invaild
@@ -135,13 +135,14 @@ def call_1(): #define call_1 function
 
 def call_1_option(): #define call_1_option function
     try:
-        call_1 = int(input('Enter 1, 2 or 3')) #ask user to input an integer
+        call_1 = int(input('Enter 1, 2 or 3:')) #ask user to input an integer
         while call_1 == 1 or 2 or 3: #run code below if input is 1,2 or3
             if call_1 == 1: #run code below if input is 1
                 print('Will: "Cool! See you then!"')
+                break
             if call == 2 or 3: #run code below when input is not 1
                 print('Will: "Come on"\n"We did not go to any party for a whole month."\n"You must be there tomorrow. See you there mate."')
-        if call_1 not in range(1,3): #run code below if input is not in range
+        if call_1 not in range(1,4): #run code below if input is not in range
             print('Input invaild! Enter 1, 2or 3 only')
             call_1()
     except: #recall function if input is invaild
@@ -171,7 +172,6 @@ phone_call() #call phone_call function
 
 
 #scene 4
-
 #print statements
 print('- - - - - - - - - ')
 print('NEXT DAY 7PM')
@@ -179,7 +179,7 @@ print('RAINNING')
 
 def travel(): #define travel funtion
     #print statements
-    print('How do you want to travel to the party place?')
+    print('How do you want to travel to the party?')
     print('1 - Walk(30 mins)')
     print('2 - Bus(15 mins)')
     print('3 - Taxi(5 mins)')
@@ -188,7 +188,7 @@ def travel(): #define travel funtion
 def travel_option(): #define travel_option function
     try:
         travel = int(input('Enter 1 or 2:')) #ask user to input an integer
-        while travel == 1 or 2 or 3: #run code below while input is 1, 2 or 3
+        while travel in range(1,4): #run code below while input is 1, 2 or 3
             if travel == 1: #run code below if input is 1
                 print('You decide to walk.')
                 travel_1()
@@ -198,7 +198,7 @@ def travel_option(): #define travel_option function
             else: #run code below if input is not 1 or 2
                 print('You decide to call a taxi.')
                 travel_3()
-        if travel not in range(1,3): #run code below if input not in range
+        if travel not in range(1,4): #run code below if input not in range
             print('Input invalid! Enter 1, 2 or 3 only.')
             travel_option()
     except: #recall function if input is invaild
@@ -223,17 +223,14 @@ def travel_1_option():
         while travel_1 in range(1,3): # run code below if input in range
             if travel_1 == 1: #run code below if input is 1
                 print('You walk into the alley after him.')
-                break #exit while loop
             else: #run code below if input is not 1
                 print('You continue walking.')
-                break #exit while loop
         if travel_1 not in range(1,3): #run code below if input is not in range
             print('Input invalid! Enter 1 or 2 only.')
             travel_1_option()
-    except:
-        except: #recall function if input is invaild
-            print('input invaild!\nEnter integer only')
-            travel_1()
+    except: #recall function if input is invaild
+        print('input invaild!\nEnter integer only')
+        travel_1()
 
 def travel_2():
     #print statements
@@ -258,16 +255,15 @@ def travel_2_option():
             while travel_2 != 1: #run code below if input is not 1
                 print('"We will be late for the party."says Hayley.')
                 travel_2_option()
-                break #exit while loop
             if travel_2 == 1: #run code below if input is 1
                 print('You get off the bus and walk with Hayley.')
+                break
         if travel_2 not in range(1,3): #run code below if input is not in range
             print('Input invalid! Enter 1 or 2 only.')
             travel_2_option()
-    except:
-        except: #recall function if input is invaild
-            print('input invaild!\nEnter 1 or 2 only')
-            travel_2()
+    except: #recall function if input is invaild
+        print('input invaild!\nEnter 1 or 2 only')
+        travel_2()
 
 def travel_3():
     #print statements
@@ -278,7 +274,7 @@ def travel_3():
     print('You died.')
     end() #call end function
 
-
+travel()
 
 #scene 5
 
