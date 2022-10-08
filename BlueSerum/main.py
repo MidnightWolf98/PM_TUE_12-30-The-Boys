@@ -1,272 +1,1 @@
-from time import sleep
-
-
-def my_loading():
-    import time
-    import sys
-
-    print("Loading:")
-
-    percent_Bar = ["[#---------]", "[##--------]", "[###-------]", "[####------]", "[#####-----]", "[######----]",
-                   "[#######---]", "[########--]", "[#########-]", "[##########]"]
-
-    for i in range(len(percent_Bar)):
-        time.sleep(0.4)
-        sys.stdout.write("\r" + percent_Bar[i % len(percent_Bar)])
-        sys.stdout.flush()
-
-    print("\n")
-
-
-def Button_Mash():
-    import sys
-    import random
-    from threading import Timer
-    import time
-
-    timeout = 2
-
-    # How mant seconds the user has to dodge
-
-    prompt = ("PRESS PRESS PRESS\n")
-    t = Timer(timeout, print, [])  # if user doesnt input prints this
-
-    t.start()  # initalises the countdown
-
-    start_time = time.time()  # imports the current time and sets it as the start time
-
-    answer = input(prompt)  # prints prompt and waits for user input enter
-
-    t.cancel()
-
-    end_time = time.time()  # gets the time after user input
-
-    reaction_time = end_time - start_time  # minus start from end time and calucaltes the difference
-
-    if reaction_time > timeout:  # this if or is for the reaction time being larger than the set timeout
-        print("You FAILED AND WENT S P L A T!")
-        sys.exit()
-
-    else:
-        print("You keep pulling up ")
-
-
-
-
-
-
-
-def Quick_Time(Action):
-    import sys
-    import random
-    from threading import Timer
-    import time
-
-    timeout = random.randint(2,5)
-
-
-
-    # How mant seconds the user has to dodge
-
-    prompt = (f"You have {timeout} seconds to dodge, press enter...\n")
-    t = Timer(timeout, print, [])  # if user doesnt input prints this
-
-    t.start()  # initalises the countdown
-
-    start_time = time.time()  # imports the current time and sets it as the start time
-
-    answer = input(prompt)  # prints prompt and waits for user input enter
-
-    t.cancel()
-
-    end_time = time.time()  # gets the time after user input
-
-    reaction_time = end_time - start_time  # minus start from end time and calucaltes the difference
-
-    if reaction_time > timeout:  # this if or is for the reaction time being larger than the set timeout
-        print("You got hit!")
-        sys.exit()
-
-    else:
-        print("You dodged and keep " + str(Action))
-
-
-
-
-
-def intro_blue():
-                      #SCENE1#
-    print("*It has been 6 months since that incedent*")
-    sleep(1.5)
-    print("*You come to your senses*")
-    sleep(1.5)
-    print("*the gunshots in the room ring through your head*\n*Every Shot feels like an anvil dropped on your head*")
-    sleep(2.5)
-    print("*The shouting Snaps you back to the moment* \n")
-    sleep(1.5)
-    print("*Frenchie runs over to you and exlaims:\nAre you Alright? Lets GO! They're getting to close WE. HAVE. TO. GO! ")
-    sleep(4)
-    print("*You look up and feel a warm liquid get splattered across your face*")
-    sleep(1.5)
-    print("*THEY SHOT FRENCHIE!* \n")
-    sleep(1)
-    print("*YOU FILL WITH ANGER AND RAGE* \n *YOU FEEL A BURNING FROM THE INSIDE AND YOU REMEMBER THE SERUM* \n *WHAT DO YOU DO?*")
-
-    print("1. Grab Frenchie and Run\n2. Unleash the rage building inside and charge the shooters\n")
-
-
-def ShotScene1():
-    try:
-        choice = int(input("WHAT WILL YOU DO?!"))
-        if choice == 1:
-            print("SCENE A1")
-        elif choice == 2:
-            print("SCENE B1")
-            Scene_B1()
-        else:
-            print("Only Enter Required Integers!")
-            ShotScene1()
-    except:
-        print("Only Enter Required Integers")
-        ShotScene1()
-
-
-def Scene_B1():
-    import sys
-    from threading import Timer
-    import time
-
-    timeout = 4
-    counter = 3
-    while counter > 0:
-
-        # How mant seconds the user has to dodge
-
-        prompt = (f"You have {timeout} seconds to dodge, press enter...\n")
-        t = Timer(timeout, print, [
-            "\n You got hit from stadning there and hesitating \n " + prompt])  # if user doesnt input prints this
-
-        t.start()  # initalises the countdown
-
-        start_time = time.time()  # imports the current time and sets it as the start time
-
-        answer = input(prompt)  # prints prompt and waits for user input enter
-
-        t.cancel()
-
-        end_time = time.time()  # gets the time after user input
-
-        reaction_time = end_time - start_time  # minus start from end time and calucaltes the difference
-
-        if reaction_time > timeout:  # this if or is for the reaction time being larger than the set timeout
-            print("You got hit!")
-            counter = counter - 1
-            timeout = timeout - 0.5
-            print("You think of what they did to you friends and get back up and charge")
-            print("Health: " + str(counter) + '\n')
-            prompt
-
-
-
-        else:
-            print("You dodged and keep charging at the enemy ")
-            timeout = timeout - 0.5
-            counter = counter - 0.5
-            prompt
-
-    print(
-        "\n*You feel a sharp pain in your back. The world begins to fade to black. The last thing you remember is...her*")
-    sys.exit()
-
-
-
-
-def Scene_A1():
-    my_loading()
-    print("You run over and grab Frenchie")
-    sleep(1)
-    print("FRENCHIE! CAN YOU HEAR ME! - you yell")
-    sleep(0.5)
-    print("***")
-    sleep(0.5)
-    print("***")
-    sleep(0.5)
-    print("***")
-    print("*Frenchie mutters something incoherently to you\nYou look him in his eyes and promise to get him out of there")
-    sleep(4)
-    print("*You scoop him up... he feels lighter than normal you think to yourself..")
-    sleep(2)
-
-    Quick_Time_Count = 0
-    while Quick_Time_Count < 4:
-        Quick_Time("Falling")
-        print("You see the ground coming up quickly. SHIT!")
-        Quick_Time_Count = Quick_Time_Count + 1
-
-    print("SHIT WHAT DO YOU DO?")
-    sleep(3)
-    print("You see the ground coming up fast. You close your eyes and your instincts kick in.\nYou feel as if every neuron in your brain is firing at once.")
-    sleep(5)
-    print("SUddenly you feel your back shoot rivers of pain throughout your entire body. All you see is red. And as if out of nowhere you hear the sound....\nOf a bird?")
-    sleep(4)
-    print("With your brain moving at 100 Miles an hour you are suddenly taken back...to the lab\nYou recall taking that Syrum and remember the same feeling back then too")
-    sleep(5)
-    print("You begin to feel the sinew in your back take on a mind of its own and you begin to...")
-    sleep(3)
-    print("...fly?")
-    sleep(3)
-    print("As if you had been flying for your whole life you direct your attention towards the nearby aparment complexes.....and head towards them")
-
-
-
-
-def Scene_A2():
-    my_loading()
-    print("*Days have passed and you and the gang are in hiding out in Hughies Apartment*")
-    sleep(2)
-    print("WHAT DO WE DO!\nTHEY TOOK KIMIKO!-Exclaims Hughie")
-    sleep(2)
-    print("The group begins to bicker between themselves")
-    sleep(3)
-    print("SHUT UP WE HAVE TO DO SOMETHING! - Shouts MM")
-    sleep(1)
-    print("...")
-    sleep(1)
-    print("...")
-    sleep(1)
-    print("...\n")
-    sleep(2)
-    print("*You feel something rising inside of you. The internal conflict begins.....*\n \n*You walk towards the window....and jump*")
-    sleep(3)
-    print("*something about flying makes you feel....free*\nYou stech your wings out and take off and think to yourself.\nWhat will your next steps be to save Kimiko abd bing juctice to the world.")
-
-    def Second_Split_Choice():
-        try:
-            choice = int(input("What will you do? How will you fix this?\nGo face Vaught head on and sae your friend or go down ina blaze of glory while trying?\nOr will you try and save one of your closest friends and leave justice up to karma?"))
-            if choice == 1:
-                print("You decice to go head to vaughts front gates and give them what they deseve.")
-            elif choice == 2:
-                print("You Fly back to your team, wind blowing on your face. You know what needs to be done to save your friend.")
-                sleep(3)
-                print("You know one way into vaught that they just wont expect...")
-                Scene_B1()
-            else:
-                print("Only Enter Required Integers!")
-                Second_Split_Choice()
-        except:
-            print("Only Enter Required Integers")
-            ShotScene1()
-
-
-
-
-
-
-
-
-
-#Quick_Time()
-#intro_blue()
-#ShotScene1()
-#Scene_A1()
-
+from time import sleepimport sysimport osdef Second_Split_Choice():    try:        choice = int(input("What will you do? How will you fix this?\n1. Go face Vaught head on and sae your friend and go down ina blaze of glory while trying?\nOr\n2. will you try and save one of your closest friends and leave justice up to karma?"))        if choice == 1:            print("You decice to go head to vaughts front gates and give them what they deseve.")            charge_Scene()        elif choice == 2:            print(                "\nYou Fly back to your team, wind blowing on your face. You know what needs to be done to save your friend.")            sleep(3)            print("\nYou know one way into vaught that they just wont expect...")            Sneak_Scene()        else:            print("Only Enter Required Integers!")            Second_Split_Choice()    except:        print("Only Enter Required Integers")        Second_Split_Choice()def battle(Villian_Name, Villian_Health):    import random    Health = Villian_Health    User_Health = 100    print(Villian_Name + " prepares to go on the offensive! What do you do?")    while User_Health > 0 and Health > 0:        print("Attacks:")        print("1. Punch")        print("2. Kick")        print("3. Special")        try:            choice = int(input("WHAT WILL YOU DO?!"))            print(choice)            if choice == 1:                damage = random.randint(5,10)                print("YOU PUNCH AND DEAL " + str(damage) + " To " +Villian_Name )                Health = Health - damage                print(Villian_Name + " Has " + str(Health) + " remaining")            elif choice == 2:                damage = random.randint(10, 20)                print("YOU KICK AND DEAL " + str(damage) + " To " + Villian_Name)                Health = Health - damage                print(Villian_Name + " Has " + str(Health) + " remaining")            elif choice == 3:                damage = random.randint(50, 75)                print("YOU FLY AT THEM AND DEAL " + str(damage) + " To " + Villian_Name)                Health = Health - damage                print(Villian_Name + " Has " + str(Health) + " remaining")        except:            print("You didnt attack!")            print(Villian_Name + " Sees you hesitate and KICKS your head off.\nYou failed your friends and the world is doomed now")            os._exit(1)        Villian_Damage = random.randint(10,30)        User_Health = User_Health - Villian_Damage        print(Villian_Name + " Does " + str(Villian_Damage) + " Damage To You!")        print("You have " + str(User_Health) + " Health Left! Be careFul!")        print("\n")    print("You defeated " + Villian_Name)def sneaking(Direction):    try:        choice = (input("You appear at a cross roads. Which direction do you go?"))        if choice.lower() == Direction:            print("You head in "+ Direction + " and keep heading on the path scribbled on the paper")        else:            print("You go in " + choice + " and turn the corner and *BAM* you get shot from nowhere. You bleed out and feel your life fleeting away")            os._exit(1)    except:        print("Whoops. You made a mistake and died! Try again!")        os._exit(1)def my_loading():    import time    import sys    print("Loading:")    percent_Bar = ["[#---------]", "[##--------]", "[###-------]", "[####------]", "[#####-----]", "[######----]",                   "[#######---]", "[########--]", "[#########-]", "[##########]"]    for i in range(len(percent_Bar)):        time.sleep(0.4)        sys.stdout.write("\r" + percent_Bar[i % len(percent_Bar)])        sys.stdout.flush()    print("\n")def Button_Mash():    import sys    import random    from threading import Timer    import time    timeout = 2    # How mant seconds the user has to dodge    prompt = ("PRESS PRESS PRESS\n")    t = Timer(timeout, print, [])  # if user doesnt input prints this    t.start()  # initalises the countdown    start_time = time.time()  # imports the current time and sets it as the start time    answer = input(prompt)  # prints prompt and waits for user input enter    t.cancel()    end_time = time.time()  # gets the time after user input    reaction_time = end_time - start_time  # minus start from end time and calucaltes the difference    if reaction_time > timeout:  # this if or is for the reaction time being larger than the set timeout        print("You FAILED AND WENT S P L A T!")        os._exit(1)    else:        print("You keep pulling up ")def Quick_Time(Action):    import sys    import random    from threading import Timer    import time    timeout = random.randint(2,5)    # How mant seconds the user has to dodge    prompt = (f"You have {timeout} seconds to dodge, press enter...\n")    sleep(1)    t = Timer(timeout, print, [])  # if user doesnt input prints this    t.start()  # initalises the countdown    start_time = time.time()  # imports the current time and sets it as the start time    answer = input(prompt)  # prints prompt and waits for user input enter    t.cancel()    end_time = time.time()  # gets the time after user input    reaction_time = end_time - start_time  # minus start from end time and calucaltes the difference    if reaction_time > timeout:  # this if or is for the reaction time being larger than the set timeout        print("You got hit!")        os._exit(1)    else:        print("You dodged and keep " + str(Action))def intro_blue():                      #SCENE1#    print("*It has been 6 months since that incedent*")    sleep(1.5)    print("*You come to your senses*")    sleep(1.5)    print("*the gunshots in the room ring through your head*\n*Every Shot feels like an anvil dropped on your head*")    sleep(2.5)    print("*The shouting Snaps you back to the moment* \n")    sleep(1.5)    print("*Frenchie runs over to you and exlaims:\nAre you Alright? Lets GO! They're getting to close WE. HAVE. TO. GO! ")    sleep(4)    print("*You look up and feel a warm liquid get splattered across your face*")    sleep(1.5)    print("*THEY SHOT FRENCHIE!* \n")    sleep(1)    print("*YOU FILL WITH ANGER AND RAGE* \n *YOU FEEL A BURNING FROM THE INSIDE AND YOU REMEMBER THE SERUM* \n *WHAT DO YOU DO?*")    print("1. Grab Frenchie and Run\n2. Unleash the rage building inside and charge the shooters\n")    ShotScene1()    exit()def ShotScene1():    try:        choice = int(input("WHAT WILL YOU DO?!"))        if choice == 1:            print("SCENE A1")            Scene_A1()        elif choice == 2:            print("SCENE B1")            Scene_B1()        else:            print("Only Enter Required Integers!")            ShotScene1()    except:        print("Only Enter Required Integers")        ShotScene1()def Scene_B1():    import sys    from threading import Timer    import time    timeout = 4    counter = 3    while counter > 0:        # How mant seconds the user has to dodge        print("YOU CHARGE AT THE ENEMIES TO GET REVENGE!\nTHEY BEGIN SHOOTING AT YOU. YOU HAVE" +str(counter) + " Health")        prompt = (f"You have {timeout} seconds to dodge a bullet, press enter...\n")        t = Timer(timeout, print, [            "\n You got hit from stadning there and hesitating \n " + prompt])  # if user doesnt input prints this        t.start()  # initalises the countdown        start_time = time.time()  # imports the current time and sets it as the start time        answer = input(prompt)  # prints prompt and waits for user input enter        t.cancel()        end_time = time.time()  # gets the time after user input        reaction_time = end_time - start_time  # minus start from end time and calucaltes the difference        if reaction_time > timeout:  # this if or is for the reaction time being larger than the set timeout            print("You got hit!")            counter = counter - 1            timeout = timeout - 0.5            print("You think of what they did to you friends and get back up and charge")            print("Health: " + str(counter) + '\n')            prompt        else:            print("You dodged and keep charging at the enemy ")            timeout = timeout - 0.5            counter = counter - 0.5            prompt    print("\n*You feel a sharp pain in your back. The world begins to fade to black. The last thing you remember is...her*")    os._exit(1)def Scene_A1():    my_loading()    print("You run over and grab Frenchie")    sleep(1)    print("FRENCHIE! CAN YOU HEAR ME! - you yell")    sleep(0.5)    print("***")    sleep(0.5)    print("***")    sleep(0.5)    print("***")    print("*Frenchie mutters something incoherently to you\nYou look him in his eyes and promise to get him out of there")    sleep(4)    print("*You scoop him up... he feels lighter than normal you think to yourself..")    sleep(2)    print("You run and jump out the closest window... you rember youre on the 50th floor.\nYou notice large pieces of debris falling with you")    Quick_Time_Count = 0    while Quick_Time_Count < 4:        Quick_Time("Falling")        print("You see the ground coming up quickly. SHIT!")        Quick_Time_Count = Quick_Time_Count + 1    print("SHIT WHAT DO YOU DO?")    sleep(3)    print("You see the ground coming up fast. You close your eyes and your instincts kick in.\nYou feel as if every neuron in your brain is firing at once.")    sleep(3)    print("SUddenly you feel your back shoot rivers of pain throughout your entire body. All you see is red. And as if out of nowhere you hear the sound....\nOf a bird?")    sleep(3)    print("With your brain moving at 100 Miles an hour you are suddenly taken back...to the lab\nYou recall taking that Syrum and remember the same feeling back then too")    sleep(3)    print("You begin to feel the sinew in your back take on a mind of its own and you begin to...")    sleep(3)    print("...fly?")    sleep(3)    print("As if you had been flying for your whole life you direct your attention towards the nearby aparment complexes.....and head towards them")    Scene_A2()def Scene_A2():    my_loading()    print("*Days have passed and you and the gang are in hiding out in Hughies Apartment*")    sleep(2)    print("WHAT DO WE DO!\nTHEY TOOK KIMIKO!-Exclaims Hughie")    sleep(2)    print("The group begins to bicker between themselves")    sleep(3)    print("SHUT UP WE HAVE TO DO SOMETHING! - Shouts MM")    sleep(1)    print("...")    sleep(1)    print("...")    sleep(1)    print("...\n")    sleep(2)    print("*You feel something rising inside of you. The internal conflict begins.....*\n \n*You walk towards the window....and jump*")    sleep(3)    print("*something about flying makes you feel....free*\nYou stech your wings out and take off and think to yourself.\nWhat will your next steps be to save Kimiko and bring juctice to the world.")    Second_Split_Choice()def charge_Scene():    sleep(2)    print("In a fit of rage you fly right at the Vaught headquaters")    sleep(2)    print("as youre flying you look above you and see Homelander staring at you with murder in his eyes")    sleep(2)    print("You see him charge up his eye lasers to shoot")    Flying_Count = 0    while Flying_Count < 4:        Quick_Time("Flying")        print("You see Homelander charge up for another shot\n")        Flying_Count = Flying_Count + 1    sleep(3)    print("You look up one more time and Homelander is no longer above you.\n")    sleep(2)    print("You shift your attention fowards and BAM you collide with Homelander head on.")    print("You beggin to lose concious and fall to your doom....\nFailing Everyone...")    os._exit(1)def Sneak_Scene():    print("You and the gang get to the manhole cover and lift it off and peer down into the abyss.\n")    sleep(2)    print("You sure this is going to work? - Asks Hughie.\n")    sleep(1)    print("Well shit its got to - You reply with\n")    sleep(1)    print("*You look at Hughie and smile and jump down the man hole. The smell hits you first and then when you land...the sound, or rather\nlack of sound...\n")    sleep(3)    print("*you hear every step you take down in the sewers*\nYou look down at the map your 'inside man' managed to make\n")    sleep(1)    print("╔═══━━━───  •  ───━━━═══╗")    print("  L > R > D > D > L > R  ")    print("╚═══━━━───  •  ───━━━═══╝")    print("You take step after step down this dark sewer path hearing nowthing but rats and water")    sleep(2)    print("plop plop plop you go through the water")    sleep(2)    sneaking("l")    print("plop plop plop you go through the water")    sleep(2)    sneaking("r")    print("plop plop plop you go through the water")    sleep(2)    sneaking("d")    print("plop plop plop you go through the water")    sleep(2)    sneaking("d")    print("plop plop plop you go through the water")    sleep(2)    sneaking("l")    print("plop plop plop you go through the water")    sleep(2)    sneaking("r")    print("plop plop plop you go through the water\n")    sleep(2)    print("You finnaly get tp the door you were told about.\n")    print("You sneak through the door and turn around to close it gentley behind you when you head *AHEM*\n")    sleep(3)    print("*You whip your head around and see the deep smirking at you*\n")    sleep(2)    print("Well now your head I might aswell stop you and gain some more fame - Yells the Deep triumphantly.\n")    sleep(3)    print("You get ready for the fight thats about to ensue. You know this is a test of the devotion you have to your friends.")    battle("The Deep", 100)    print("You defeat the deep\n")    sleep(2)    print("ypu step over his unconscious body and head up through the building \n")    sleep(2)    print("With the alarms BLEARING you walk into the main hallway.")    sleep(2)    print("You see him...\n...Homelander...")    sleep(2)    print("And hes holding Kimiko")    sleep(3)    print("He stares you in the eyes and booms\nSO WHAT ARE YOU GOING TO DO THEN!?")    sleep(2)    print("Rage overtakes you and you charge at him")intro_blue()#battle("Greg", 100)#intro_blue()#ShotScene1()#Scene_A1()
