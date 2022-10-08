@@ -1,3 +1,7 @@
+#import build-in module
+import time
+import random
+import os
 
 #end game
 def end(): #define end function
@@ -48,8 +52,8 @@ def escape_option(): #define escape_option function
             escape_2() #call escape_2 function\
 
     except: #recall function if input is invaild
-        print('Input invaild! Enter 1 or 2 only2')
-        escape() #call escape function
+        print('Input invaild! Enter integer only')
+        escape_option() #call escape function
 
 def escape_2(): #define escape_2 function
     #print statements
@@ -75,11 +79,11 @@ def escape_2_option(): #define escape_2_option function
                 print('You found a set of rappel on the edge of the bulding.\nMight be left from some window cleaners.')
                 print('You slide down and reach a lower bulding and run away from those soldiers.')
         else: #run code below if input is not in range
-            print('Input invaild! Enter 1 or 2 only3')
+            print('Input invaild! Enter 1 or 2 only')
             escape_2_option() #call escape_2_option function
     except: #recall function if input is invaild
-        print('Input invaild! Enter 1 or 2 only4')
-        escape_2()
+        print('Input invaild! Enter integer only')
+        escape_2_option()
 
 escape() #call function
 
@@ -113,6 +117,7 @@ def phone_call_option(): #define phone_call_option function
             while call_time < 2: #run code below while call_time smaller than 2
                 call_time = call_time + 1 #add 1 to call_time
                 call_2() #call function call_2
+                break
                 if call_time == 2: #run code below if call_time equal to 2
                     call_3() #call function call_3
                     break #exit while loop
@@ -120,8 +125,8 @@ def phone_call_option(): #define phone_call_option function
             print('Input invaild! Enter 1 or 2 only')
             phone_call_option()
     except: #recall function if input is invaild
-        print('Input invaild! Enter 1 or 2 only')
-        call_1()
+        print('Input invaild! Enter integer only')
+        phone_call_option()
 
 def call_1(): #define call_1 function
     #print statements
@@ -143,11 +148,11 @@ def call_1_option(): #define call_1_option function
             if call == 2 or 3: #run code below when input is not 1
                 print('Will: "Come on"\n"We did not go to any party for a whole month."\n"You must be there tomorrow. See you there mate."')
         if call_1 not in range(1,4): #run code below if input is not in range
-            print('Input invaild! Enter 1, 2or 3 only')
+            print('Input invaild! Enter 1, 2 or 3 only')
             call_1()
     except: #recall function if input is invaild
-        print('input invaild!\nEnter 1 or 2 only')
-        call_1()
+        print('input invaild!\nEnter integer only')
+        call_1_option()
 
 
 def call_2(): #define call_2 function
@@ -176,6 +181,8 @@ phone_call() #call phone_call function
 print('- - - - - - - - - ')
 print('NEXT DAY 7PM')
 print('RAINNING')
+print('- - - - - - - - - ')
+travel_1 = 0 #global variable called travel
 
 def travel(): #define travel funtion
     #print statements
@@ -185,10 +192,13 @@ def travel(): #define travel funtion
     print('3 - Taxi(5 mins)')
     travel_option() #call travel_option function
 
+
 def travel_option(): #define travel_option function
     try:
-        travel = int(input('Enter 1 or 2:')) #ask user to input an integer
-        while travel in range(1,4): #run code below while input is 1, 2 or 3
+
+        travel = int(input('Enter 1, 2 or 3:')) #ask user to input an integer, update travel
+
+        if travel in range(1,4): #run code below while input is 1, 2 or 3
             if travel == 1: #run code below if input is 1
                 print('You decide to walk.')
                 travel_1()
@@ -200,16 +210,17 @@ def travel_option(): #define travel_option function
                 travel_3()
         if travel not in range(1,4): #run code below if input not in range
             print('Input invalid! Enter 1, 2 or 3 only.')
-            travel_option()
+            travel()
+
     except: #recall function if input is invaild
         print('input invaild!\nEnter integer only')
-        travel()
+        travel_option()
 
 def travel_1():
     #print statements
     print('>>>')
     print('WALKING ON THE STREET TO THE PARTY...')
-    print('Suddenly, you see a shadow appear not far ahead.')
+    print('Suddenly, you see a shadow appear not far ahead. (NEW CHARACTER - SHADOW)')
     print('You feel like he is looking at you, and he disappear in the alley.')
     print('- - - - - - - - - ')
     print('What will you do?')
@@ -219,51 +230,56 @@ def travel_1():
 
 def travel_1_option():
     try:
+        global travel_1 #get global value travel_1
         travel_1 = int(input('Enter 1 or 2:')) #ask user to input an integer
         while travel_1 in range(1,3): # run code below if input in range
             if travel_1 == 1: #run code below if input is 1
                 print('You walk into the alley after him.')
+                break
             else: #run code below if input is not 1
+            #print statements
                 print('You continue walking.')
+                print('You see a girl who looks familiar, you walk up and talk to her.')
+                print('She turn around and regonise you. She is going to the party as well. (NEW CHARACTER - HAYLEY)')
+                print('You tell her about the shadow, she decided to check it out with you.')
+                print('You walk into the alley looking for the shadow.')
+                shadow() #call shadow function
+                break #exit while loop
+
         if travel_1 not in range(1,3): #run code below if input is not in range
             print('Input invalid! Enter 1 or 2 only.')
             travel_1_option()
     except: #recall function if input is invaild
         print('input invaild!\nEnter integer only')
-        travel_1()
+        travel_1_option()
 
 def travel_2():
     #print statements
     print('>>>')
     print('ON THE BUS...')
-    print('You see a girl who looks familiar sitting next to the window, you walk up and sit next to her.')
-    print('She turn around and regonise you. She is going to the party as well. (NEW CHARACTER - HAYLEY)')
-
-    print('CHATTING WITH HAYLEY..')
     print('"There is a car accident ahead, if you are hurry, walk to the bus stop next street please." from the bus driver.')
-    print('"Should we walk?" Hayley ask you.')
+
     print('- - - - - - - - - ')
-    print('What will you say?')
+    print('What will you do?')
     print('1. "Yeah sure."')
-    print('2. "I might just wait on the bus."')
+    print('2. "Just wait on the bus."')
+
     travel_2_option() #call travel_2_option function
 
 def travel_2_option():
     try:
         travel_2 = int(input('Enter 1 or 2:')) #ask user to input an integer
-        while travel_2 in range(1,3): #run code below if input is in range
-            while travel_2 != 1: #run code below if input is not 1
-                print('"We will be late for the party."says Hayley.')
-                travel_2_option()
-            if travel_2 == 1: #run code below if input is 1
-                print('You get off the bus and walk with Hayley.')
-                break
-        if travel_2 not in range(1,3): #run code below if input is not in range
-            print('Input invalid! Enter 1 or 2 only.')
-            travel_2_option()
+        while travel_2 != 1: #run code below while input is not 1
+            if travel_2 == 2: #run code below if input is 2
+                print('You will be late for the party.')
+                break #exit while loop
+            travel_2 = int(input('Enter 1 or 2:')) #ask user to input an integer
+        if travel_2 == 1: #run code below if input is 1
+            print('You get off the bus and walk.')
+            fight() #call fight function
     except: #recall function if input is invaild
-        print('input invaild!\nEnter 1 or 2 only')
-        travel_2()
+        print('input invaild!\nEnter integer only')
+        travel_2_option()
 
 def travel_3():
     #print statements
@@ -274,18 +290,90 @@ def travel_3():
     print('You died.')
     end() #call end function
 
-travel()
+
 
 #scene 5
 
+def shadow():
+    global travel_1 #get value for global variable travel_1_option
+    #print statments
+    print('>>>')
+    print('It is getting dark, you can barely see when walking in the alley.')
+    print('You hear something is moving towards you.')
+    print('The shadow is coming to kill you.')
+
+    if travel_1 == 1:#if Hayley did not appear
+        #print statments
+        print('The shadow is moving so fast that you can not dodge.')
+        print('You get hit by it.')
+        print('You died.')
+        end()#call end function
+
+    if travel_1 == 2:#if Hayley appears
+        #print statments
+        print('Just before the shadow hits you, Hayley pushes you to the side.')
+        print('It missed, and Hayley stabs it from its back with her dagger.')
+        print('It falls down, you and Hayley run away.')
+        fight()#call fight funciton
 
 
+#scene 6
+
+def fight():
+    #print statments
+    print('>>>')
+    print('You arrive the party, having fun.')
+    print('Suddenly the door is smashed open and a man appears, followed by a group of soldiers')
+    print('You regonise them, they were the soldiers from the night when you took the serum.')
+    print('You must fight them, with the power given to you by the serum.')
+    try:
+        #set health points
+        soldiers_health = 100
+        my_health = 100
+
+        #set attack damage
+        wind_attack = random.randint(5,19)
+        lightning_attack = random.randint(20,39)
+        tsunami_attack = random.randint(40,60)
+
+        #print statments
+        print('Which level of attack will you use?')
+        print('1. Wind - light attack')
+        print('2. Lightning - medium attack')
+        print('3. Tsunami - heavy attack')
+
+        attack = int(input('Enter 1, 2 or 3:'))#ask user to input integer
+        while soldiers_health != 0 and my_health != 0: #run code below if both alive
+            if attack == 1:
+                print('You have dealt them',wind_attack,'points of damage.')
+                soldiers_health = soldiers_health - wind_attack
+                print('Their health point is now',soldiers_health)
+            elif attack == 2:
+                print('You have dealt them',lightning_attack,'points of damage.')
+                soldiers_health = soldiers_health - lightning_attack
+                print('Their health point is now',soldiers_health)
+            elif attack == 3:
+                print('You have dealt them',tsunami_attack,'points of damage.')
+                print('This attack is so strong, yourself also been afftected.')
+                soldiers_health = soldiers_health - tsunami_attack
+                my_health = my_health - tsunami_attack
+                print('Their health point is now',soldiers_health)
+                print('Your health point is now',my_health)
+
+            #if anyone died
+            if soldiers_health <= 0: #if soldiers died
+                print('Congratulations, you have defeated the soldiers.')
+                break#exit while loop
+            if my_health <= 0:#if user died
+                print('You died.')
+                end()#call end function
+
+            attack = int(input('Enter 1, 2 or 3:'))#ask user to input integer
 
 
+    except: #recall function if input is invaild
+        print('input invaild!\nEnter integer only')
+        fight()
 
 
-
-
-
-
-input()
+travel()#call travel function
