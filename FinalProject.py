@@ -831,6 +831,7 @@ def serum_choice():  # Defines the game_choice function
                     if tranquilizer_gun > 0:
                         print("\nYou wait for him in the darkness. Aiming down the gun, waiting to get a clear shot.")
                         print("You spot him, and shoot him right in chest 3 times. Congrats you have survived!!!")
+                        print("Homelander appears out of nowhere and takes Gorilla Grodd and proceeds to drop him from the sky")
                         Final_Scene()
                     else:
                         print("\nYou should have picked up that gun.")
@@ -881,6 +882,7 @@ def serum_choice():  # Defines the game_choice function
                     print("\nYou quickly drink the potion. It gave you super strength!!!")
                     print("You defeated Gorilla Grodd with the help of the potion")
                     print("Congratulations, you have survived!!!")
+                    print("Homelander appears out of nowhere and takes Gorilla Grodd and proceeds to drop him from the sky")
                     Final_Scene()
                 else:
                     print("\nMaybe you should have picked up the potion!!!")
@@ -982,7 +984,6 @@ def serum_choice():  # Defines the game_choice function
             print('You get a phone call from your best friend Will. (NEW CHARACTER - WILL)')
 
             call_time = 0  # create a global variable called call_time
-
             def phone_call():  # define phone_call function
                 # print statements
                 print('- - - - - - - - - ')
@@ -1003,9 +1004,8 @@ def serum_choice():  # Defines the game_choice function
                             call_time = call_time + 1  # add 1 to call_time
                             call_2()  # call function call_2
                             break
-                            if call_time == 2:  # run code below if call_time equal to 2
-                                call_3()  # call function call_3
-                                break  # exit while loop
+                        if call_time == 2:  # run code below if call_time equal to 2
+                            call_3()  # call function call_3
                     else:  # run code below if input is not in range
                         print('Input invaild! Enter 1 or 2 only')
                         phone_call_option()
@@ -1031,7 +1031,9 @@ def serum_choice():  # Defines the game_choice function
                             print('Will: "Cool! See you then!"')
                             break
                         if call_1 == 2 or 3:  # run code below when input is not 1
-                            print('Will: "Come on"\n"We did not go to any party for a whole month."\n"You must be there tomorrow. See you there mate."')
+                            print(
+                                'Will: "Come on"\n"We did not go to any party for a whole month."\n"You must be there tomorrow. See you there mate."')
+                            break
                     if call_1 not in range(1, 4):  # run code below if input is not in range
                         print('Input invaild! Enter 1, 2 or 3 only')
                         call_1()
